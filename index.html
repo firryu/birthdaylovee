@@ -192,39 +192,28 @@ section[hidden]{display:none}
     <p>Beberapa hari lagi kita ketemu, aku gak sabar
       <span class="inline-heart" title="love pink">${HEART_PINK()}</span>
     </p>
+    <script>
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date("August 29, 2025 08:30:00 GMT+0700"); // WIB
 
-    <!-- Countdown -->
-    <div id="countdown" style="font-size:24px; margin-top:12px; text-align:center; color:#ff1493;">
-      Loading countdown...
-    </div>
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+      if(diff <= 0){
+        countdownEl.textContent = "🎉 Saatnya ketemu!";
+        clearInterval(timer);
+        return;
+      }
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff / (1000*60*60)) % 24);
+      const minutes = Math.floor((diff / (1000*60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
 
-    <div class="nav"><a href="#universe" data-go>⬅ Back to Universe</a></div>
-  </div>
-</section>
-
-<script>
-  // Countdown Moments in Time
-  const countdownEl = document.getElementById("countdown");
-  const targetDate = new Date("August 29, 2025 08:30:00 GMT+0700"); // WIB
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = targetDate - now;
-    if(diff <= 0){
-      countdownEl.textContent = "🎉 Saatnya ketemu!";
-      clearInterval(timer);
-      return;
-    }
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff / (1000*60*60)) % 24);
-    const minutes = Math.floor((diff / (1000*60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-    countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }
-
-  const timer = setInterval(updateCountdown, 1000);
-  updateCountdown();
- </script>
+    const timer = setInterval(updateCountdown, 1000);
+    updateCountdown();
+    </script>
     <div class="nav"><a href="#universe" data-go>⬅ Back to Universe</a></div>
   </div>
 </section>
