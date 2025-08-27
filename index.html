@@ -203,6 +203,26 @@ section[hidden]{display:none}
   <a href="#closing" data-go style="font-weight:bold; color:#ff69b4;">Klik untuk Penutup 🎁</a>
 </div>
 
+<!-- Section: Moments in Time (Countdown) -->
+<section id="moments" hidden>
+  <div class="card">
+    <h2>Moments in Time</h2>
+    
+    <!-- Teks tetap di atas countdown -->
+    <p>Beberapa hari lagi kita ketemu, aku gak sabar
+      <span class="inline-heart" title="love pink">${HEART_PINK()}</span>
+    </p>
+
+    <!-- Countdown -->
+    <div id="countdown" style="font-size:24px; margin-top:12px; text-align:center; color:#ff1493;">
+      Loading countdown...
+    </div>
+
+    <div class="nav"><a href="#universe" data-go>⬅ Back to Universe</a></div>
+  </div>
+</section>
+
+<script>
   // Countdown Moments in Time
   const countdownEl = document.getElementById("countdown");
   const targetDate = new Date("August 29, 2025 08:30:00 GMT+0700"); // WIB
@@ -225,15 +245,6 @@ section[hidden]{display:none}
   const timer = setInterval(updateCountdown, 1000);
   updateCountdown();
 </script>
-<!-- Section: Moments in Time -->
-Countdown Moments in Time
-  const countdownEl = document.getElementById("countdown");
-  const targetDate = new Date("August 29, 2025 08:30:00 GMT+0700"); // WIB
-  function updateCountdown() {
-    const now = new Date();
-    const diff = targetDate - now;
-    if(diff <= 0){
-    </div>
     <div class="nav"><a href="#universe" data-go>⬅ Back to Universe</a></div>
   </div>
 </section>
@@ -271,7 +282,7 @@ Selamat ulang tahun, Sayangku. Semoga tahun ini bawa banyak kebaikan buatmu dan 
 </section>
 
   </div>  <!-- Floating audio player (backsound) -->  <div class="player-bar" id="playerBar" hidden>
-    <button id="playToggle">Pause</button>
+    <button id="playToggle">Play</button>
     <div>🎶 Penjaga Hati — Nadhif Basalamah</div>
     <audio id="audio" preload="auto">
       <!-- GANTI src DI BAWAH DENGAN FILE MP3-MU SENDIRI -->
