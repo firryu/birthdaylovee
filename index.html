@@ -5,18 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Sayang</title>
 <style>
-  body { font-family: Arial, sans-serif; background:#fff0f5; color:#333; margin:0; padding:0; }
+  body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fff0f5; color:#333; }
   .card { background:#fff; margin:20px auto; padding:20px; border-radius:12px; max-width:800px; box-shadow:0 4px 16px rgba(0,0,0,0.1); }
   .center { display:flex; justify-content:center; align-items:center; text-align:center; flex-direction:column; }
   h2 { color:#ff69b4; }
   .inline-heart { color:#ff69b4; }
   a[data-go] { color:#ff69b4; text-decoration:none; font-weight:bold; margin:8px; display:inline-block; }
   a[data-go]:hover { text-decoration:underline; }
-
-  /* Audio player */
-  .audio-player { text-align:center; margin-top:12px; }
-  #playBtn { font-size:16px; padding:6px 14px; border:none; border-radius:8px; background:#ff69b4; color:#fff; cursor:pointer; }
-  #playBtn:hover { background:#ff1493; }
 
   /* Slideshow Memory Lane */
   .slideshow { display:flex; justify-content:center; align-items:center; overflow:hidden; gap:12px; margin-top:12px; }
@@ -29,24 +24,21 @@
 
   /* Countdown */
   #countdown { font-size:24px; margin-top:12px; color:#ff1493; }
+
+  /* Audio Player */
+  .audio-player { text-align:center; margin:20px 0; }
+  #playBtn { font-size:16px; padding:6px 14px; border:none; border-radius:8px; background:#ff69b4; color:#fff; cursor:pointer; }
+  #playBtn:hover { background-color:#ff1493; }
 </style>
 </head>
 <body>
-
-<!-- Audio Control -->
-<div class="audio-player">
-  <button id="playBtn">▶ Play Music</button>
-  <audio id="bgMusic" src="audio/penjaga_hati.mp3" loop></audio>
-</div>
 
 <!-- Halaman Pembuka -->
 <section id="opening" class="card center">
   <h1>Happy Birthday, Sayang!</h1>
   <p>Hari ini spesial buat kamu, tapi juga buat aku… karena aku bisa ngerayain momen ini sama kamu <span class="inline-heart">❤️</span></p>
   <p>Let's Celebrate You!</p>
-  <div class="nav">
-    <a href="#universe" data-go>➡ Masuk Birthday Universe</a>
-  </div>
+  <div class="nav"><a href="#universe" data-go>➡ Masuk Birthday Universe</a></div>
 </section>
 
 <!-- Birthday Universe -->
@@ -56,55 +48,36 @@
     <p style="opacity:.8">Pilih salah satu bintang di bawah untuk dibuka 🌟</p>
     <div class="grid" style="margin-top:14px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
       <a class="card center" href="#memory" data-go>
-        <div>
-          <h3>Memory Lane</h3>
-          <p>Buat aku, semua kenangan bareng kamu itu berharga <span class="inline-heart">❤️</span></p>
-        </div>
+        <div><h3>Memory Lane</h3><p>Buat aku, semua kenangan bareng kamu itu berharga <span class="inline-heart">❤️</span></p></div>
       </a>
       <a class="card center" href="#moments" data-go>
-        <div>
-          <h3>Moments in Time</h3>
-          <p>Beberapa hari lagi kita ketemu, aku gak sabar <span class="inline-heart">❤️</span></p>
-        </div>
+        <div><h3>Moments in Time</h3><p>Beberapa hari lagi kita ketemu, aku gak sabar <span class="inline-heart">❤️</span></p></div>
       </a>
       <a class="card center" href="#words" data-go>
-        <div>
-          <h3>Words From My Heart</h3>
-          <p>Surat kecil dari aku untuk kamu 🤍</p>
-        </div>
+        <div><h3>Words From My Heart</h3><p>Surat kecil dari aku untuk kamu 🤍</p></div>
       </a>
       <a class="card center" href="#wishes" data-go>
-        <div>
-          <h3>Wishes & Whispers</h3>
-          <p>Doa sederhana tapi tulus 🤍</p>
-        </div>
+        <div><h3>Wishes & Whispers</h3><p>Doa sederhana tapi tulus 🤍</p></div>
       </a>
-      <a class="card center" href="#closingPage" data-go>
-        <div>
-          <h3>Penutup</h3>
-          <p>Akhir yang hangat untuk harimu 🤍</p>
-        </div>
+      <a class="card center" href="#closing" data-go>
+        <div><h3>Penutup</h3><p>Akhir yang hangat untuk harimu 🤍</p></div>
       </a>
     </div>
-    <div class="nav">
-      <a href="#opening" data-go>⬅ Halaman Pembuka</a>
-    </div>
+    <div class="nav"><a href="#opening" data-go>⬅ Halaman Pembuka</a></div>
   </div>
 </section>
 
-<!-- Memory Lane -->
+<!-- Section: Memory Lane -->
 <section id="memory" hidden>
   <div class="card">
     <h2>Memory Lane</h2>
     <p>Buat aku, semua kenangan bareng kamu itu berharga <span class="inline-heart">❤️</span></p>
-
     <div class="slideshow" id="slideshow">
       <div class="slide active"><img src="images/foto1.jpg" alt="Kita 1" /></div>
       <div class="slide"><img src="images/foto2.jpg" alt="Kita 2" /></div>
       <div class="slide"><img src="images/foto3.jpg" alt="Kita 3" /></div>
       <div class="slide"><img src="images/foto4.jpg" alt="Kita 4" /></div>
     </div>
-
     <div class="controls">
       <button class="ctrl" id="prev">◀</button>
       <button class="ctrl" id="next">▶</button>
@@ -113,9 +86,9 @@
   </div>
 </section>
 
-<!-- Moments in Time (Countdown) -->
+<!-- Section: Moments in Time (Countdown) -->
 <section id="moments" hidden>
-  <div class="card center">
+  <div class="card">
     <h2>Moments in Time</h2>
     <p>Beberapa hari lagi kita ketemu, aku gak sabar <span class="inline-heart">❤️</span></p>
     <div id="countdown">Loading countdown...</div>
@@ -123,12 +96,12 @@
   </div>
 </section>
 
-<!-- Words From My Heart -->
+<!-- Section: Words From My Heart -->
 <section id="words" hidden>
   <div class="card">
     <h2>Words From My Heart</h2>
     <p>
-      Sayang, di ulang tahunmu kali ini aku cuma pengen bilang terima kasih. Terima kasih udah hadir di hidupku dengan caramu sendiri. Walaupun kadang ngga sama seperti yg aku mau, tapi justru itu bikin aku belajar buat lebih sabar, lebih percaya, dan lebih menghargai kamu apa adanya. Aku tetap bersyukur karena aku tau kamu selalu berusaha ada buat aku dengan cara kamu.<br><br>
+      Sayang, di ulang tahunmu kali ini aku cuma pengen bilang terima kasih. Terima kasih udah hadir di hidupku dengan caramu sendiri. Walaupun kadang ngga sama seperti yg aku mau, tapi justru itu bikin aku belajar buat lebih sabar, lebih percaya, dan lebih menghargai kamu apa adanya. aku tetap bersyukur karena aku tau kamu selalu berusaha ada buat aku dengan cara kamu.<br><br>
       Aku sayang sama kamu, bukan cuma pas kamu manis atau perhatian, tapi juga pas kamu diem dan tertutup. Karena aku tau, di balik itu semua, kamu tetap orang yang selalu ada buat aku, sedikit demi sedikit nunjukin tanggung jawabmu.<br><br>
       Doaku buatmu sederhana semoga kamu sehat, bahagia, sukses, dan selalu dilindungi. Dan semoga aku bisa terus ada di sisimu, sesusah apapun itu, secapek apapun itu dan selama apapun itu aku ingin aku selalu disamping kamu nemenin setiap langkah yang kamu ambil🥰<br><br>
       Selamat ulang tahun, Sayangku. Semoga tahun ini bawa banyak kebaikan buatmu dan buat kita. Aku bangga punya kamu, dan aku selalu bersyukur karena bisa mencintaimu 🤍
@@ -137,7 +110,7 @@
   </div>
 </section>
 
-<!-- Wishes & Whispers -->
+<!-- Section: Wishes & Whispers -->
 <section id="wishes" hidden>
   <div class="card">
     <h2>Wishes & Whispers</h2>
@@ -148,9 +121,9 @@
   </div>
 </section>
 
-<!-- Penutup Halaman Terpisah -->
-<section id="closingPage" hidden>
-  <div class="card center">
+<!-- Section: Penutup Terpisah -->
+<section id="closing" hidden>
+  <div class="card center" style="flex-direction:column">
     <h2>Penutup</h2>
     <p style="font-size:18px; text-align:center; max-width:720px">
       Hope you like it! Kado kecil ini aku bikin dengan sepenuh hati.<br>
@@ -159,6 +132,17 @@
     <div class="nav"><a href="#universe" data-go>⬅ Back to Universe</a></div>
   </div>
 </section>
+
+<!-- Tombol menuju Penutup (bisa diletakkan di mana pun) -->
+<div style="text-align:center; margin:12px 0;">
+  <a href="#closing" data-go style="font-weight:bold; color:#ff69b4;">Klik untuk Penutup 🎁</a>
+</div>
+
+<!-- Audio Player (tetap di bawah halaman) -->
+<div class="audio-player">
+  <button id="playBtn">▶ Play Music</button>
+  <audio id="bgMusic" src="audio/penjaga_hati.mp3" loop></audio>
+</div>
 
 <script>
   // Audio Play/Pause
@@ -189,30 +173,4 @@
   function updateCountdown() {
     const now = new Date();
     const diff = targetDate - now;
-    if(diff <= 0){ countdownEl.textContent = "🎉 Saatnya ketemu!"; clearInterval(timer); return; }
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff / (1000*60*60)) % 24);
-    const minutes = Math.floor((diff / (1000*60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-    countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }
-  const timer = setInterval(updateCountdown, 1000);
-  updateCountdown();
-
-  // Simple navigation without reload
-  document.querySelectorAll('a[data-go]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      document.querySelectorAll('section').forEach(sec => sec.hidden = true);
-      target.hidden = false;
-    });
-  });
-
-  // Tampilkan halaman pembuka awal
-  document.querySelectorAll('section').forEach(sec => sec.hidden = true);
-  document.getElementById('opening').hidden = false;
-</script>
-
-</body>
-</html>
+    if(diff <= 0){
